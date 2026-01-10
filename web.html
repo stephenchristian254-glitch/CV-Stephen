@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - [Nama Lu]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CSS SAMA SEPERTI SEBELUMNYA (DARK MODE) */
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent: #38bdf8; /* Warna Biru Tech */
+            --text-main: #f1f5f9;
+            --text-sec: #94a3b8;
+            --gold: #fbbf24; /* Warna Gold untuk kesan Premium/Sales */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 420px; 
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(56, 189, 248, 0.15); /* Glow biru tipis */
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .profile-pic {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 15px;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+        }
+
+        h1 { font-size: 1.6rem; margin-bottom: 5px; font-weight: 700; }
+        
+        .role {
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .campus {
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bio {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 25px;
+            text-align: left; /* Rata kiri biar lebih enak baca poinnya */
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .stats-box {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            gap: 10px;
+        }
+
+        .stat {
+            background: rgba(255,255,255,0.03);
+            padding: 10px;
+            border-radius: 10px;
+            flex: 1;
+        }
+
+        .stat h3 { font-size: 1.1rem; color: var(--text-main); }
+        .stat p { font-size: 0.7rem; color: var(--text-sec); text-transform: uppercase; }
+
+        .btn-action {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(45deg, #0ea5e9, #2563eb);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+        }
+
+        .btn-action:hover { transform: scale(1.02); }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--text-sec);
+            color: var(--text-sec);
+        }
+
+        .section-title {
+            text-align: left;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .skill-tag {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--accent);
+        }
+        
+        /* Tambahan: List Experience */
+        .exp-list {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .exp-item {
+            margin-bottom: 10px;
+            border-left: 2px solid var(--gold);
+            padding-left: 10px;
+        }
+        .exp-title { font-size: 0.9rem; font-weight: 600; color: var(--text-main); }
+        .exp-desc { font-size: 0.8rem; color: var(--text-sec); }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Profile" class="profile-pic">
+        
+        <h1>Stephen</h1>
+        <div class="role">Digital Strategist & Financial Consultant</div>
+        
+        <div class="campus">
+            <i class="fas fa-university"></i> BINUS University @Alam Sutera
+        </div>
+
+        <div class="bio">
+            Binusian Semester 4. Menggabungkan kemampuan teknis <strong>(HTML/Design)</strong> dengan psikologi penjualan. 
+            <br><br>
+            Berpengalaman membangun aset digital dan mengelola portofolio klien asuransi dengan orientasi <em>High-Value Return</em>.
+        </div>
+
+        <div class="stats-box">
+            <div class="stat">
+                <h3>4th</h3>
+                <p>Semester</p>
+            </div>
+            <div class="stat">
+                <h3>Active</h3>
+                <p>Ins. License</p>
+            </div>
+            <div class="stat">
+                <h3>Dev</h3>
+                <p>Web & Design</p>
+            </div>
+        </div>
+
+        <div class="section-title">Experience & Projects</div>
+        <div class="exp-list">
+            <div class="exp-item">
+                <div class="exp-title">Financial Consultant (Insurance)</div>
+                <div class="exp-desc">Managing client portfolio & generating recurring passive income through strategic sales.</div>
+            </div>
+            <div class="exp-item">
+                <div class="exp-title">Digital Product Developer</div>
+                <div class="exp-desc">Creating web-based assets (HTML) & content design for branding needs.</div>
+            </div>
+        </div>
+
+        <div class="section-title">Core Skills</div>
+        <div class="skills">
+            <span class="skill-tag">HTML5 & CSS3</span>
+            <span class="skill-tag">Content Design</span>
+            <span class="skill-tag">Sales</span>
+            <span class="skill-tag">Digital Branding</span>
+            <span class="skill-tag">Financial Planning</span>
+        </div>
+
+        <a href="cv-lengkap.pdf" download class="btn-action">
+            <i class="fas fa-file-pdf"></i> Download Full Resume
+        </a>
+        
+        <a href="https://wa.me/6281291490156" class="btn-action btn-outline">
+            <i class="fab fa-whatsapp"></i> Contact for Business
+        </a>
+    </div>
+
+</body>
+</html>

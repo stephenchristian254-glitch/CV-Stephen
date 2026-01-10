@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Stephen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        /* RESET & PRINT SETUP */
+        * { box-sizing: border-box; -webkit-print-color-adjust: exact; }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #e2e2e2;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+        }
+
+        /* A4 Paper Settings */
+        .page {
+            width: 21cm;
+            min-height: 29.7cm;
+            padding: 0;
+            margin: 1cm auto;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 32% 68%; /* Kiri 32%, Kanan 68% */
+        }
+
+        @media print {
+            body { background: none; margin: 0; }
+            .page { margin: 0; border: none; width: 100%; height: 100%; box-shadow: none; }
+        }
+
+        /* --- LEFT COLUMN (Sidebar) --- */
+        .left-col {
+            background-color: #1e293b; /* Dark Slate Blue */
+            color: white;
+            padding: 30px 25px; /* Sedikit dilebarkan paddingnya */
+            height: 100%; 
+        }
+
+        .profile-img-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 130px; /* Diperbesar dikit biar gagah */
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #38bdf8;
+        }
+
+        .contact-info { margin-bottom: 40px; }
+        .contact-item {
+            display: flex;
+            align-items: center; /* Center vertical */
+            margin-bottom: 15px; /* Jarak antar kontak diperlega */
+            font-size: 0.85rem;
+        }
+        .contact-item i { 
+            width: 25px; 
+            color: #38bdf8; 
+            font-size: 1.1rem; /* Icon digedein dikit */
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .section-left { margin-bottom: 35px; }
+        .section-left h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid #38bdf8;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .skill-list { list-style: none; padding: 0; }
+        .skill-list li {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Education Styling in Left Col */
+        .edu-item { margin-bottom: 15px; }
+        .edu-degree { font-weight: 700; font-size: 0.95rem; color: #38bdf8; }
+        .edu-school { font-size: 0.9rem; margin-top: 4px; font-weight: 600; }
+        .edu-year { font-size: 0.85rem; color: #cbd5e1; margin-top: 2px; font-style: italic; }
+        .edu-gpa { font-size: 0.85rem; color: #cbd5e1; margin-top: 2px; }
+
+        /* --- RIGHT COLUMN (Main Content) --- */
+        .right-col {
+            padding: 40px 35px;
+            background-color: #fff;
+        }
+
+        .header { margin-bottom: 30px; border-bottom: 2px solid #f1f5f9; padding-bottom: 20px; }
+        .name {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #1e293b;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            margin: 0;
+            line-height: 1;
+        }
+        .title {
+            font-size: 1rem;
+            color: #0ea5e9; /* Light Blue */
+            font-weight: 700;
+            margin-top: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .summary {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 35px;
+            text-align: justify;
+        }
+
+        .section-right { margin-bottom: 30px; }
+        .section-title-right {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .section-title-right i {
+            margin-right: 12px;
+            color: #0ea5e9;
+            background: #e0f2fe;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .job-item {
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 3px solid #e2e8f0; /* Garis samping dipertebal */
+        }
+        
+        .job-title { font-weight: 700; font-size: 1rem; color: #334155; }
+        .job-company { font-weight: 600; font-size: 0.9rem; color: #0ea5e9; margin-top: 2px; }
+        .job-date { font-size: 0.8rem; color: #64748b; margin-bottom: 10px; font-style: italic; margin-top: 2px;}
+        .job-desc {
+            font-size: 0.9rem;
+            color: #475569;
+            line-height: 1.5;
+        }
+        .job-desc ul { margin: 5px 0 0 0; padding-left: 15px; }
+        .job-desc li { margin-bottom: 5px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="left-col">
+            <div class="profile-img-container">
+                <img src="CS.jpeg" alt="Stephen" class="profile-img">
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+62 812-9149-0156</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>stephen018@binus.ac.id</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Jakarta / Alam Sutera</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-instagram"></i>
+                    <span>@stephtm5.1</span>
+                </div>
+            </div>
+
+            <div class="section-left">
+                <h3>Education</h3>
+                <div class="edu-item">
+                    <div class="edu-degree">Computer Science</div>
+                    <div class="edu-school">BINUS University</div>
+                    <div class="edu-school">@Alam Sutera</div>
+                    <div class="edu-year">2023 - Present (Sem 4)</div>
+                    <div class="edu-gpa">GPA: 3.50</div>
+                </div>
+            </div>
+
+            <div class="section-left">
+                <h3>Tech Skills</h3>
+                <ul class="skill-list">
+                    <li>HTML5 & CSS3</li>
+                    <li>UI/UX Design Concept</li>
+                    <li>Digital Marketing Tools</li>
+                    <li>Content Creation</li>
+                </ul>
+            </div>
+            
+            <div class="section-left">
+                <h3>Soft Skills</h3>
+                <ul class="skill-list">
+                    <li>Consultative Sales</li>
+                    <li>Financial Planning</li>
+                    <li>Negotiation</li>
+                    <li>Public Speaking</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-col">
+            
+            <div class="header">
+                <h1 class="name">STEPHEN</h1>
+                <div class="title">DIGITAL STRATEGIST & FINANCIAL CONSULTANT</div>
+            </div>
+
+            <div class="summary">
+                Mahasiswa BINUS University Semester 4 dengan kombinasi keahlian unik di bidang Teknologi (Web Development) dan Finansial (Insurance). Berhasil membangun portofolio klien aktif dan menghasilkan <i>recurring revenue</i> secara mandiri. Memiliki ambisi untuk menggabungkan solusi digital dengan strategi bisnis untuk meningkatkan efisiensi dan penjualan.
+            </div>
+
+            <div class="section-right">
+                <div class="section-title-right">
+                    <i class="fas fa-briefcase"></i> WORK EXPERIENCE
+                </div>
+
+                <div class="job-item">
+                    <div class="job-title">Financial Consultant (Insurance Agent)</div>
+                    <div class="job-company">Allianz</div>
+                    <div class="job-date">2025 - Present</div>
+                    <div class="job-desc">
+                        <ul>
+                            <li>Berhasil mengakuisisi dan mengelola portofolio klien dengan total nilai proteksi signifikan.</li>
+                            <li>Menghasilkan passive income rutin (Recurring Revenue) melalui strategi <i>relationship selling</i>.</li>
+                            <li>Mengedukasi klien mengenai manajemen risiko dan perencanaan keuangan jangka panjang.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="job-item">
+                    <div class="job-title">Freelance Web & Content Designer</div>
+                    <div class="job-company">Self-Employed</div>
+                    <div class="job-date">2024 - Present</div>
+                    <div class="job-desc">
+                        <ul>
+                            <li>Merancang <strong>High-Converting Landing Page</strong> berbasis HTML untuk kebutuhan branding profesional.</li>
+                            <li>Mengembangkan aset visual dan strategi konten digital untuk meningkatkan <i>personal branding</i> di media sosial.</li>
+                            <li>Mengimplementasikan prinsip UI/UX modern.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-right">
+                <div class="section-title-right">
+                    <i class="fas fa-rocket"></i> KEY PROJECTS
+                </div>
+
+                <div class="job-item">
+                    <div class="job-title">Personal Digital Portfolio</div>
+                    <div class="job-desc">
+                        Mengembangkan website portofolio interaktif berbasis HTML5/CSS3 yang terintegrasi dengan sistem download CV otomatis, dirancang untuk meningkatkan kredibilitas profesional di era digital.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
